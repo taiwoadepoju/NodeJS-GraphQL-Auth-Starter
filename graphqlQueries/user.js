@@ -3,7 +3,7 @@ const { GraphQLList } = graphql;
 const userResolvers = require('../graphqlResolvers/user');
 const UserType = require('../graphqlSchema/user');
 
-const eventQuery = {
+const userQuery = {
   getAllUsers: {
     type: new GraphQLList(UserType),
     resolve() {
@@ -14,4 +14,4 @@ const eventQuery = {
 }
 
 
-module.exports = eventQuery;
+module.exports = userQuery;
