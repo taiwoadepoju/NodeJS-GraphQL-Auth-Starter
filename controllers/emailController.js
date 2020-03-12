@@ -42,7 +42,7 @@ module.exports = {
       subject: 'NodeJs GraphQL Starter App: New Activation Code',
       html: `
         <h2>Hello ${user.firstName},</h2>
-        <p>Please use the code below to activate your account.</p>
+        <p>Please use the code below to activate your account. The code would expire in 24 hours.</p>
         <h6>
           ${token}
         </h6>
@@ -59,11 +59,11 @@ module.exports = {
       subject: 'NodeJs GraphQL Starter App: Reset Your Password',
       html: `
         <h2>Hello ${user.firstName},</h2>
-        <p>Please click the link below to reset your password.</p>
+        <p>Please use the code below to reset your password. The code would expire in 24 hours.</p>
         <p>
-          <b> 
-            <a href='${config.BASE_URL}/${token}'>Reset Password</a> 
-          </b>
+          <h6>
+            ${token}
+          </h6>
         </p>
         <p>Cheers!</p>
       `
