@@ -38,6 +38,7 @@ DATABASE_URL='YOUR MONGODB URL'
 * Forgot Password
 * Change Password
 * Reset Password
+* User activation and verification tokens
 * Disable/Enable user
 * Query all users
 * Sendgrid email service
