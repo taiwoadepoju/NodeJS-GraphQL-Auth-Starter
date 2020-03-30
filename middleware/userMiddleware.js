@@ -8,7 +8,8 @@ module.exports = {
       phone: Joi.number().min(9).max(9999999999).required(),
       isAdmin: Joi.boolean(),
       email: Joi.string().email().min(5).max(100).required(),
-      password: Joi.string().min(6).max(100).required()
+      password: Joi.string().min(6).max(100).required(),
+      gender: Joi.string()
     };
 
     const { error } = Joi.validate(req, schema)
