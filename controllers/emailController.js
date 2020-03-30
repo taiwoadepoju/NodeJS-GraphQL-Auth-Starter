@@ -1,6 +1,23 @@
-const config = require('../config/constants');
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(config.SENDGRID_API_KEY);
+// const config = require('../config/constants');
+// const sgMail = require('@sendgrid/mail');
+const nodemailer = require('nodemailer');
+// sgMail.setApiKey(config.SENDGRID_API_KEY);
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_ADDRESS,
+    pass: process.env.GMAIL_PASSWORD
+  }
+});
+
+function sendEmail(message) {
+  transporter.sendMail(message, function (err, info) {
+    if (err)
+      console.log(err)
+    else
+      console.log(info);
+  });
+}
 
 module.exports = {
   newUser(user, token) {
@@ -17,7 +34,7 @@ module.exports = {
         <p>Cheers.</p>
       `
     }
-    sgMail.send(message);
+    sendEmail(message);
   },
 
   activatedUser(user) {
@@ -32,7 +49,7 @@ module.exports = {
         <p>Cheers!</p>
       `
     }
-    sgMail.send(message);
+    sendEmail(message);
   },
 
   resendToken(user, token) {
@@ -49,7 +66,7 @@ module.exports = {
         <p>Cheers!</p>
       `
     }
-    sgMail.send(message);
+    sendEmail(message);
   },
 
   resetPasswordToken(user, token) {
@@ -68,7 +85,7 @@ module.exports = {
         <p>Cheers!</p>
       `
     }
-    sgMail.send(message);
+    sendEmail(message);
   },
 
   successfulPasswordReset(user) {
@@ -82,6 +99,6 @@ module.exports = {
         <p>Cheers!</p>
       `
     }
-    sgMail.send(message);
+    sendEmail(message);
   }
 }
