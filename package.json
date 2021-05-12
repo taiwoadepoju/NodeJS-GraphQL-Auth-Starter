@@ -24,7 +24,7 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.26",
     "mongoose": "^5.7.5",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "randomatic": "^3.1.1",
     "request": "^2.88.0",
     "winston": "^3.2.1",
