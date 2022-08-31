@@ -22,7 +22,7 @@
     "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "mongoose": "^5.7.5",
     "nodemailer": "^6.4.6",
     "randomatic": "^3.1.1",
